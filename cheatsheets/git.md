@@ -62,4 +62,5 @@
 - For initial setup using `gh` command, see [[git-terminal-setup]]
 
 **NOTE:**
-Always be careful with commands that can discard changes (like `reset --hard`). When in doubt, make a backup or use safer alternatives.
+- Always be careful with commands that can discard changes (like `reset --hard`). When in doubt, make a backup or use safer alternatives.
+- Stick to a single workflow when learning. Try not make edits in `vscode` one minute then `vim` the next, same goes for `git commit`. Dealing with `git` errors is not worth the stress 😅
