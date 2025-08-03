@@ -15,7 +15,7 @@ mkdir -p ansible-projects && cd ansible-projects
 ## 3. Create an `inventory` file.
 
 ```bash
-# Replace <server_ip> as required
+# Replace <server_ip> as required or with host alias from  ~/.ssh/config if configured.
 # Using a user named ansible to manage servers. Change as necessary.
 cat <<EOF > inventory
 [ubuntu_servers]
@@ -31,7 +31,7 @@ Ansible connects over SSH. Ensure you can log in to your target server manually:
 
 ```bash
 ssh ansible@<server_ip>
-````
+```
 
 If you use SSH keys:
 
@@ -39,7 +39,8 @@ If you use SSH keys:
 ssh-copy-id ansible@<server_ip>
 ```
 
-You may also want to configure `~/.ssh/config` to store host aliases. There is an example of one in the `/configs` directory.
+You may also want to configure `~/.ssh/config` to store host aliases.  
+Example: see /configs/ssh-config-example for a starting template.
 
 ## 5. Create a simple playbook
 
@@ -73,7 +74,7 @@ These additional utilities are not required to start off, but will become useful
 - `ansible-lint`: Catch mistakes and bad practices in playbooks before running them.
 - `yq`: Read, query, and edit YAML from the command line.
 
-Both of the above tools are available using `brew`
+Both of the above tools are available using `brew install ansible-lint yq`
 
 - [Ansible Inventory Basics](https://chatgpt.com/c/688f394a-838c-8320-87ab-05d0b737d926#:~:text=docs:Ansible%20Inventory-,Basics) 
 - [ansible-lint Docs](https://ansible.readthedocs.io/projects/lint/)
