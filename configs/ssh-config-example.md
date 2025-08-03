@@ -8,6 +8,6 @@ Host web-*
 Host web-prod
     HostName prod.example.com # Actual IP or hostname.
 
-# Alias 'web-prod'
+# Alias 'web-staging'
 Host web-staging
     HostName staging.example.com
