@@ -1,5 +1,11 @@
 Example of a `.gitignore` file to use with projects.
 
+**NOTE:** Can also be used in `~/.gitignore_global` which once created, can be configured using:
+
+```bash
+git config --global core.excludesfile ~/.gitignore_global
+```
+
 ```bash
 # Cloud credentials/configs
 .azure/
