@@ -16,4 +16,8 @@ yq e '.hosts[0] = "new-host"' -i inventory.yml
 
 # Convert YAML → JSON
 yq -o=json eval inventory.yml
+
+# extract variables from an Ansible vars file
+yq e '.vars.my_var' vars.yml
+
 ```
