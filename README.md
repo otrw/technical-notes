@@ -33,9 +33,9 @@ Everything here is plain Markdown and stored in Git for easy versioning and shar
 ## About
 I’m collecting these notes as I work through learning Docker, Ansible, Git, and other tools.
 
-This repo replaces some of my Obsidian workflow with everything tracked in Git.
+This repo replaces some of my Obsidian workflow.
 
-## Roadmap
+## TODO
 
 - Add more Ansible examples
 - Expand Dockerfile notes
