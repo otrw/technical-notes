@@ -1,9 +1,7 @@
-# Git Worktree: A Safer, Cleaner Workflow for Testing Changes
+# Git Worktree: A Workflow for Testing Changes
 
 ## Overview
 `git worktree` allows you to create multiple working directories from a single Git repository. It's ideal for testing, temporary changes, or working on multiple branches without switching or cloning.
-
----
 
 ## Use Case: Testing Docker or Config Changes
 
@@ -12,8 +10,6 @@ Instead of cloning your repo into a temp folder, you can:
 - Attach a separate working directory
 - Make changes and test in isolation
 - Merge back when happy
-
----
 
 ## Step-by-Step Guide
 
@@ -66,8 +62,6 @@ git branch -d test-config-change # deletes the test branch
 git push origin main
 ```
 
----
-
 ## Why This Workflow Works
 | Benefit                   | Explanation                              |
 | ------------------------- | ---------------------------------------- |
@@ -75,8 +69,6 @@ git push origin main
 | No need to stash/checkout | Work simultaneously on multiple branches |
 | Clean merges              | Use Git’s built-in merge when ready      |
 | Low overhead              | More efficient than cloning full repos   |
-
----
 
 ## Alias Automation
 To speed things up, add these to `.zshrc` or `.bashrc`:
@@ -98,17 +90,13 @@ alias project1-clean='\
   cd $project1_PATH && git branch -D test-env-change'
 ```
 
----
-
-## Commands Reference
+## Command Reference
 ```bash
 git worktree list             # Show all active worktrees
 git worktree add <path> <branch>   # Add a new worktree
 git worktree remove <path>   # Remove a worktree
 git branch -d <branch>        # Delete the test branch
 ```
-
----
 
 ## When to Use
 | Situation                                 | Use Worktree? |
