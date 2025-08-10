@@ -1,18 +1,20 @@
-# Ansible Quickstart install and setup
+# Ansible Quickstart Guide
+
+## Scope
 
 This is intended as a quick setup of Ansible on my Mac as the control node, with an aim to have a functional and *simple* working example to start off with.
 
-## 1. Install via `brew`
+### 1. Install via `brew`
 ```bash
 brew install ansible 
 ```
 
-## 2. Create a working directory:
+### 2. Create a working directory:
 ```bash
 mkdir -p ansible-projects && cd ansible-projects
 ```
 
-## 3. Create an `inventory` file.
+### 3. Create an `inventory` file.
 
 ```bash
 # Replace <server_ip> as required or with host alias from  ~/.ssh/config if configured.
@@ -22,10 +24,9 @@ cat <<EOF > inventory
 <server_ip> ansible_user=ansible ansible_become=yes
 EOF
 ```
+- The heading used here `[ubuntu_servers]` is a reference / label and can be amended as required.
 
-The heading used here `[ubuntu_servers]` is a reference / label and can be amended as required.
-
-## 4. Configure SSH Access
+### 4. Configure SSH Access
 
 Ansible connects over SSH. Ensure you can log in to your target server manually:
 
@@ -40,9 +41,9 @@ ssh-copy-id ansible@<server_ip>
 ```
 
 You may also want to configure `~/.ssh/config` to store host aliases.  
-Example: see [`/configs/ssh-config-example`](../configs/ssh-config-example.md) for a starting template.
+Example: see [`ssh-config-example`](../config-examples/ssh/ssh-config-example.md) for a starting template.
 
-## 5. Create a simple playbook
+### 5. Create a simple playbook
 
 Create a `yml` file in the same folder and give it a suitable name i.e. `server-updates.yml`
 
