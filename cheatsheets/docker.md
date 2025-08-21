@@ -62,7 +62,7 @@ docker-compose logs
 ### System Maintenance
 ```shell
 docker system prune
-docker system df
+docker system df    # Shows Docker container Disk Usage
 docker info
 ```
 
