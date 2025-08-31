@@ -61,6 +61,10 @@ Create a `yml` file in the same folder and give it a suitable name i.e. `server-
     - name: Upgrade all packages
       apt:
         upgrade: dist
+
+    -name: Display if reboot is reqyuired
+      debug:
+        msg: "Reboot required: {{ reboot_required_file.stat.exists }}"
 ```
 
 Save the file and run the playbook using:
