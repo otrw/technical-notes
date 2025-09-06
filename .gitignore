@@ -14,6 +14,7 @@
 # Editor/IDE files
 .vscode/
 .idea/
+*.code-snippets
 *.code-workspace
 *.swp
 *.swo
@@ -34,6 +35,7 @@ id_rsa*
 *credential*
 config.local.*
 config.json
+*.log
 
 # Binaries
 *.jar
