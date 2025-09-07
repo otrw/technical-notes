@@ -4,13 +4,13 @@
 
 1. Remove old versions
 
-```shell
+```bash
 for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
 ```
 
 2. Set up the app repo + GPG key
 
-```shell
+```bash
 sudo apt-get update
 sudo apt-get install -y ca-certificates curl 
 sudo install -m 0755 -d /etc/apt/keyrings
@@ -20,7 +20,7 @@ sudo chmod a+r /etc/apt/keyrings/docker.asc
 
 3. Add apt sources
 
-```shell
+```bash
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
   $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
@@ -30,13 +30,13 @@ sudo apt-get update
 
 4. Install Docker
 
-```shell
+```bash
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
 5. Enable non-root use
 
-```shell
+```bash
 sudo usermod -aG docker $USER
 newgrp docker
 ```
@@ -53,7 +53,7 @@ newgrp docker
 
 6. Test install
 
-```shell
+```bash
 docker run hello-world
 ```
 

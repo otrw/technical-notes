@@ -1,4 +1,8 @@
 # Docker Compose Template
+
+Minimal `docker-compose.yml` file.
+
+```yml
 services:
   <service-name>:
     image: <image-name>:<tag> # e.g. rmcrackan/libation:latest
@@ -16,3 +20,4 @@ services:
 
 volumes:
   <named-volume>: # Declare named volumes here
+```

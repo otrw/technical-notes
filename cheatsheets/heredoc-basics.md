@@ -66,7 +66,7 @@ EOF'
 
 ---
 
-## Safety Tip
+## Safety
 
 Always back up config files before appending:
 

@@ -1,4 +1,6 @@
-Simple configuration example for `vim`. This file is typically saved to `$HOME` in `.vimrc`
+# `.vimrc` Example
+
+Simple configuration example for `.vimrc`
 
 ```vim
 " Ensure Vim uses filetype plugins

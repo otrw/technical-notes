@@ -1,4 +1,5 @@
 # TMUX Config
+
 Simple example of the `.tmux.conf`. This file is typically saved to `$HOME`
 
 ```bash

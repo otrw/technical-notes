@@ -1,6 +1,6 @@
 # Hetzner: SSH setup
 
-**NOTE**: If you are creating a disposable playground, it is fine to use the root account for testing and find your way around. It is good practice to create a new user, especially if you start hosting apps or leave the VM up 24/7
+**NOTE**: If you are creating a disposable playground, use the `root` account for testing and finding your way around. Best practice is to create a new user, especially if you start hosting apps or leave the VM up 24/7.
 
 1. **Create your VM in the Hetzner console** and upload your SSH key for `root` (simplest way first time).
     - Make a note of the IP Address
