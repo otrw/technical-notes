@@ -1,5 +1,6 @@
+# Docker compose example
 
-A `docker-compose.yml` example with several images. This was taken directly from the Minecraft project used for learning.
+A `docker-compose.yml` example with several images, using the Minecraft project as an example.
 
 ```yml
  services:

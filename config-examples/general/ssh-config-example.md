@@ -1,4 +1,5 @@
 # SSH Config Example
+
 Example `~/.ssh/config` for aliasing hosts and setting defaults.
 
 ```plaintext

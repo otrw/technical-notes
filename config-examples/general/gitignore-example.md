@@ -1,10 +1,9 @@
-Example of a `.gitignore` file to use with projects.
+# `.gitignore` file example
 
-**NOTE:** Can also be used in `~/.gitignore_global` which once created, can be configured using:
+**NOTE**: `.gitignore` does not retroactively ignore files or directories.  
+If a file or directory has already been committed, adding it to `.gitignore` will not stop it from being tracked.  
 
-```bash
-git config --global core.excludesfile ~/.gitignore_global
-```
+Example of a `.gitignore` file for projects.
 
 ```bash
 # Cloud credentials/configs
@@ -71,5 +70,16 @@ docker-compose.override.yml  # Ignore local Docker Compose override files (devel
 docker-compose.override.*  # Catch alternate overrides like override.dev.yml
 .docker/                 # Some repos use this for docker config/scripts
 **/config/            # Ignore any 'config' directory at any depth (often used for app configs)
-
 ```
+
+---
+
+## Global `.gitignore`
+
+**NOTE:** You can also set up a global ignore file (e.g. `~/.gitignore_global`) for patterns you want applied everywhere. Configure it with:
+
+```bash
+git config --global core.excludesfile ~/.gitignore_global
+```
+
+However, using a `.gitignore` per project is usually clearer and avoids unexpected conflicts.

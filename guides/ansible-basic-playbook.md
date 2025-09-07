@@ -24,6 +24,7 @@ cat <<EOF > inventory
 <server_ip> ansible_user=ansible ansible_become=yes
 EOF
 ```
+
 - The heading used here `[ubuntu_servers]` is a reference / label and can be amended as required.
 
 ### 4. Configure SSH Access
@@ -41,7 +42,7 @@ ssh-copy-id ansible@<server_ip>
 ```
 
 You may also want to configure `~/.ssh/config` to store host aliases.  
-Example: see [`ssh-config-example`](../config-examples/ssh/ssh-config-example.md) for a starting template.
+Example: see [`ssh-config-example`](../general/ssh-config-example.md) for a starting template.
 
 ### 5. Create a simple playbook
 

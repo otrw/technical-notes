@@ -5,6 +5,7 @@
 ---
 
 ## 1. Prereqs: Docker + user in docker group
+
 ```bash
 # if Docker isn't installed yet (skip if you already have it)
 # install via your preferred method; example (convenience script):
@@ -13,8 +14,6 @@ curl -fsSL https://get.docker.com | sh
 # let your user run docker without sudo (log out/in afterwards)
 sudo usermod -aG docker "$USER"
 ````
-
----
 
 ## 2. Install kind (official binary)
 
@@ -31,8 +30,6 @@ Verify:
 kind --version
 ```
 
----
-
 ## 3. Create a cluster
 
 ```bash
@@ -40,8 +37,6 @@ kind create cluster --name mydemo
 ```
 
 You’ll see it pull a `kindest/node` image, then configure the control plane.
-
----
 
 ## 4. Check kubectl context & nodes
 
@@ -54,8 +49,6 @@ kubectl get nodes
 Expected: one `Ready` node like `demo-control-plane`.
 
 > If you see “connection to localhost:8080 refused,” you haven’t created a cluster yet or your kubeconfig/context isn’t set. Running `kind create cluster` fixes this.
-
----
 
 ## 5. Quick test (whoami)
 
@@ -70,8 +63,6 @@ kubectl port-forward svc/whoami 8080:80 &
 curl http://localhost:8080
 ```
 
----
-
 ## 6. Clean up
 
 ```bash
@@ -83,7 +74,6 @@ kubectl delete pod whoami
 kind delete cluster --name mydemo
 ```
 
----
 ## Notes
 
 * `kind` uses Docker under the hood; clusters are disposable.
