@@ -41,8 +41,8 @@ If you use SSH keys:
 ssh-copy-id ansible@<server_ip>
 ```
 
-You may also want to configure `~/.ssh/config` to store host aliases.  
-Example: see [`ssh-config-example`](../general/ssh-config-example.md) for a starting template.
+**Tip**: Configure `~/.ssh/config` for host aliases — see [ssh-config-example](../config-examples/general/ssh-config-example.md).
+
 
 ### 5. Create a simple playbook
 
