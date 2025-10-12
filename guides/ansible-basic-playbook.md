@@ -21,13 +21,35 @@ mkdir -p ansible-projects && cd ansible-projects
 # Using a user named ansible to manage servers. Change as necessary.
 cat <<EOF > inventory
 [ubuntu_servers]
-<server_ip> ansible_user=ansible ansible_become=yes
+<server_ip> ansible_user=ansible
 EOF
 ```
-
 - The heading used here `[ubuntu_servers]` is a reference / label and can be amended as required.
 
-### 4. Configure SSH Access
+### 4. Create the ansible user on the server
+
+The ansible user on the server is going to run the ansible playbooks. We need to create the user, amend group access and remove password prompts.
+
+```bash
+# Using Ubuntu adduser
+sudo adduser --disable-password --gecos "" ansible
+sudo usermod -aG sudo ansible
+echo 'ansible ALL=(ALL) NOPASSWD:ALL' | sudo tee /etc/sudoers.d/ansible
+sudo chmod 440 /etc/sudoers.d/ansible
+
+echo '#
+# Disable password logins entirely (key-only SSH)
+PasswordAuthentication no
+
+# Never allow direct root SSH
+PermitRootLogin no' | sudo tee -a /etc/ssh/sshd_config
+
+# Reload the ssh config
+sudo systemctl reload ssh
+
+```
+
+### 5. Configure SSH Access
 
 Ansible connects over SSH. Ensure you can log in to your target server manually:
 
@@ -44,7 +66,7 @@ ssh-copy-id ansible@<server_ip>
 **Tip**: Configure `~/.ssh/config` for host aliases — see [ssh-config-example](../config-examples/general/ssh-config-example.md).
 
 
-### 5. Create a simple playbook
+### 6. Create a simple playbook
 
 Create a `yml` file in the same folder and give it a suitable name i.e. `server-updates.yml`
 
@@ -63,7 +85,7 @@ Create a `yml` file in the same folder and give it a suitable name i.e. `server-
       apt:
         upgrade: dist
 
-    -name: Display if reboot is reqyuired
+    - name: Display if reboot is required
       debug:
         msg: "Reboot required: {{ reboot_required_file.stat.exists }}"
 ```
