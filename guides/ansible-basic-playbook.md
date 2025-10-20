@@ -31,17 +31,16 @@ EOF
 The ansible user on the server is going to run the ansible playbooks. We need to create the user, amend group access and remove password prompts.
 
 ```bash
-# Using Ubuntu adduser
+# Copy your ssh public key to the server
+scp .ssh/id_ed25529.pub <user>@<serverIP>:/tmp/
+
+# ssh to the server and create the ansible user account
 sudo adduser --disabled-password --gecos "" ansible
 sudo usermod -aG sudo ansible
 echo 'ansible ALL=(ALL) NOPASSWD:ALL' | sudo tee /etc/sudoers.d/ansible
 sudo chmod 440 /etc/sudoers.d/ansible
 
-# Copy your ssh public key to the server
-scp .ssh/id_ed25529.pub <user>@<serverIP>:/tmp/
-
-# ssh to the server as admin and set ansible user permissions
-
+# Set ansible user permissions
 sudo mkdir -p /home/ansible/.ssh
 sudo mv /tmp/id_ed25519.pub /home/ansible/.ssh/authorized_keys
 sudo chown -R ansible:ansible /home/ansible/.ssh
@@ -67,15 +66,6 @@ Ansible connects over SSH. Ensure you can log in to your target server manually:
 ```bash
 ssh ansible@<server_ip>
 ```
-
-If you use SSH keys:
-
-```bash
-ssh-copy-id ansible@<server_ip>
-```
-
-**Tip**: Configure `~/.ssh/config` for host aliases — see [ssh-config-example](../config-examples/general/ssh-config-example.md).
-
 
 ### 6. Create a simple playbook
 
