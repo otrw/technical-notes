@@ -32,10 +32,21 @@ The ansible user on the server is going to run the ansible playbooks. We need to
 
 ```bash
 # Using Ubuntu adduser
-sudo adduser --disable-password --gecos "" ansible
+sudo adduser --disabled-password --gecos "" ansible
 sudo usermod -aG sudo ansible
 echo 'ansible ALL=(ALL) NOPASSWD:ALL' | sudo tee /etc/sudoers.d/ansible
 sudo chmod 440 /etc/sudoers.d/ansible
+
+# Copy your ssh public key to the server
+scp .ssh/id_ed25529.pub <user>@<serverIP>:/tmp/
+
+# ssh to the server as admin and set ansible user permissions
+
+sudo mkdir -p /home/ansible/.ssh
+sudo mv /tmp/id_ed25519.pub /home/ansible/.ssh/authorized_keys
+sudo chown -R ansible:ansible /home/ansible/.ssh
+sudo chmod 700 /home/ansible/.ssh
+sudo chmod 600 /home/ansible/.ssh/authorized_keys
 
 echo '#
 # Disable password logins entirely (key-only SSH)
@@ -84,6 +95,11 @@ Create a `yml` file in the same folder and give it a suitable name i.e. `server-
     - name: Upgrade all packages
       apt:
         upgrade: dist
+
+    - name: Check if reboot is required
+      stat:
+        path: /var/run/reboot-required
+      register: reboot_required_file
 
     - name: Display if reboot is required
       debug:
