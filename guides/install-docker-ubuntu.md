@@ -31,7 +31,7 @@ sudo apt-get update
 4. Install Docker
 
 ```bash
-sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose docker-compose-plugin 
 ```
 
 5. Enable non-root use

@@ -49,6 +49,10 @@ docker volume create <volume_name>
 docker run -v <volume_name>:<container_path> <image>
 docker volume ls
 docker volume rm <volume_name>
+docker volume inspect <volume_name>
+docker cp <container_name>:<path_inside_container> ./backup  # Copy data out safely
+docker volume prune
+
 ```
 
 ### Docker Compose
