@@ -46,4 +46,7 @@ sudo systemctl daemon-reload
 
 # Test mounting everything
 sudo mount -a
+
+# Confirm mountpoint
+lsblk
 ```
