@@ -1,6 +1,10 @@
 # Docker compose example
 
-A `docker-compose.yml` example with several images, using the Minecraft project as an example.
+## About
+
+A `docker-compose.yml` using the Minecraft project as an example.
+
+## Example
 
 ```yml
  services:
@@ -36,18 +40,5 @@ A `docker-compose.yml` example with several images, using the Minecraft project 
     volumes:
       - ./bedrock/data:/data
     restart: unless-stopped
-  minecraft-admin:
-  # This service is used for administrative tasks and scripts
-  # It mounts the scripts and data directories for both Java and Bedrock servers
-  # and runs a lightweight Alpine container to keep the environment ready for admin tasks
-  # It does not run a Minecraft server but provides a persistent environment for management
-    image: alpine
-    container_name: mc-admin-server
-    command: ["/scripts/start-admin.sh"]
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock # Allows the container to manage Docker
-      - ./scripts:/scripts # Mount the scripts directory
-      - ./java/data:/java_data:ro # Mount the Java server data directory as read-only
-      - ./bedrock/data:/bedrock_data:ro # Mount the Bedrock server data directory as read-only
-    restart: unless-stopped
-```
+  ```
+  

@@ -1,8 +1,10 @@
-    ### **ansible-lint**
+# Ansible lint
 
-**Purpose:** Catch mistakes and bad practices in your playbooks **before** you run them. Can also be run before commiting playbooks to `git` to help catch syntax errors and bad practices in files not being immediately run.
+Catch mistakes and bad practices in playbooks before running them. Can also be run before commiting playbooks to `git` to help catch syntax errors and bad practices in files not being immediately run.
 
-**Common usage:**
+> This can be installed on MacOS using `brew`
+
+## Usage
 ```bash
 # Check a single playbook
 ansible-lint update.yml
@@ -11,11 +13,10 @@ ansible-lint update.yml
 ansible-lint
 ```
 
-**Typical warnings it finds:**
+## Common Warnings
 
 * Missing `name:` in tasks
 * Deprecated modules/options
 * Wrong indentation in YAML
 * Commands that should use Ansible modules instead
 
----

@@ -1,6 +1,10 @@
-# `.vimrc` Example
+# Configure Vim
 
-Simple configuration example for `.vimrc`
+## About
+
+Simple configuration example for `.vimrc`, stored in `$HOME`
+
+## Example
 
 ```vim
 " Ensure Vim uses filetype plugins

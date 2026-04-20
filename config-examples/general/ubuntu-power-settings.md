@@ -1,6 +1,10 @@
 # Modify Power Settings in Ubuntu
 
-Settings to control power button presses and lid switches on Ubuntu laptops - useful for headless or shelf-mounted servers/labs.
+## About
+
+Config settings controling power button presses and lid switches on Ubuntu.
+
+## Configure
 
 1. Edit `/etc/systemd/conf`
 
@@ -8,7 +12,7 @@ Settings to control power button presses and lid switches on Ubuntu laptops - us
 sudo nano /etc/systemd/logind.conf
 ```
 
-2. Uncomment the following lines:
+2. Uncomment the following lines
 
 ```bash
 HandlePowerKey=ignore
@@ -16,17 +20,18 @@ HandleLidSwitch=ignore
 HandleLidSwitchExternalPower=ignore
 HandleLidSwitchDocked=ignore
 ```
-Save and exit.
 
-3. Reload logind(or reboot) :
+3. Save and exit.
+
+4. Reload logind(or reboot)
 
 ```bash
 sudo systemctl restart systemd-logind
 ```
 
-4. Verify the changes:
+5. Verify the changes
 
 ```bash
 loginctl show-seat | grep Handle
+# Newer versions of `systemd` can use the command `loginctl show-logind`.
 ```
-**Note:** Newer versions of `systemd` can use the command `loginctl show-logind`.

@@ -1,3 +1,7 @@
+#  `az-cli` reference
+
+## About
+
 Common `az` commands for working with `azure-cli`
 
 > Offical docs for azure-cli:  

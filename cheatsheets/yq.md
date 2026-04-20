@@ -1,8 +1,8 @@
-### **yq**
+# Using `yq`
 
-**Purpose:** Read, query, and edit YAML from the command line.
+Read, query, and edit YAML from the command line.
 
-**Common usage:**
+## Usage
 
 ```bash
 # View a key

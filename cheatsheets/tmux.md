@@ -1,4 +1,4 @@
-# Simple `tmux`
+# Using `tmux`
 
 ## Starting Tmux
 - Open terminal.
@@ -7,15 +7,14 @@
 You'll notice the bottom of your terminal now has a green status bar. This indicates you're in a tmux session.
 
 ## Prefix Key
-The prefix key is used before any tmux command. By default, it's `Ctrl+b` or just `prefix` in the following instructions.
+The prefix key is used before any tmux command. By default, it's `Ctrl+b`, in these instructions it will be just referred to as `prefix`.
 
 To use a tmux command:
 - Press `prefix`
 - Release both keys
 - Press the command key
 
-**NOTE:**
-Many users remap prefix from `Ctrl+b` to `Ctrl+a` for easier reach, this can be done by modifying the `.tmux.conf` in the `$HOME`. A simple example can be founf in the `configs` directory.
+>Many users remap prefix from `Ctrl+b` to `Ctrl+a` for easier reach, this can be done by modifying the `.tmux.conf` in the `$HOME`. A simple example can be founf in the `configs` directory.
 
 ## Basic Operations
 
@@ -67,8 +66,8 @@ Many users remap prefix from `Ctrl+b` to `Ctrl+a` for easier reach, this can be 
 
 - To detach from a session: `prefix` then `d`.
 - To reattach to a session:
-- List available sessions with `tmux ls`
-- Attach to a specific session with `tmux attach -t session_name`
+    - List available sessions: `tmux ls`
+    - Attach to a session: `tmux attach -t session_name`
 
 ### Copy Mode
 

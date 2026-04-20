@@ -38,5 +38,3 @@
 - [Online Vim Cheat Sheet](https://vim.rtorr.com/)
 - In `Vim` use `:vimtutor`
 - `vimrc` example can be found in the `configs` directory
-
-

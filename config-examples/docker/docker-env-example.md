@@ -1,8 +1,15 @@
-# Docker `.env` example
+# Using `.env` files with Docker
 
-Docker environment file. A place for common and predefined variables to be used in conjuntion with the `docker-compose.yml`
+## About
+
+Docker environment file. A place for common and predefined variables to be used in conjuntion with the `docker-compose.yml` file.
+
+> See official docs for most up to date info. 
+https://docs.docker.com/compose/how-tos/environment-variables/variable-interpolation/
 
 General rule of thumb would be to add `.env` to `.gitignore` and commit an example file, i.e. `env-example` as the `.env` can contain sensitive data. The `env-example` could be copied to `.env` for editing / use.
+
+## Examples
 
 ```bash
 # Docker .env example
@@ -15,7 +22,7 @@ ENABLE_RCON=true
 RCON_PASSWORD=changeme
 ```
 
-To use these in the `docker-compose.yml`, use the following format:
+Reference these in the `docker-compose.yml` file: 
 
 ```yml
     environment:
@@ -27,12 +34,10 @@ To use these in the `docker-compose.yml`, use the following format:
       RCON_PASSWORD: ${RCON_PASSWORD}
 ```
 
-**NOTE**: You can set environment variables with default values, for example:
+You can also set environment variables with default values:
 
 ```yml
 environment:
   EULA: ${EULA:-true}    # if unset or empty, default to true
   MEMORY: ${MEMORY-4G}   # if unset, default to 4G (empty string stays empty)
 ```
-
-More information in the [Official Docker Documentation](https://docs.docker.com/compose/how-tos/environment-variables/variable-interpolation/)

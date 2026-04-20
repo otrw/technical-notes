@@ -1,6 +1,10 @@
 # Docker Compose Template
 
-Minimal `docker-compose.yml` file.
+## About
+
+Empty `docker-compose.yml` file.
+
+## Example
 
 ```yml
 services:

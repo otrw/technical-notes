@@ -66,10 +66,4 @@ Host myserver
     Port 22
     IdentityFile ~/.ssh/id_ed25519
 ```
-
-# Usage
-
-```bash
-ssh myserver
-```
-
+usage: `ssh myserver`

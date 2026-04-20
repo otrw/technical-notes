@@ -1,15 +1,16 @@
-# Change Ubuntu Static Address
+# Assign a Static IP Address in Ubuntu
 
-How to change a statically assigned IP Address on an Ubuntu Server.
+## About
 
-1. From the server, edit the `netplan` file (you may need to use `sudo`)
+How to change a statically assigned IP Address on an Ubuntu Server. This was tested on `Ubuntu 24.04`
+
+1. On the server, edit the `netplan` file.
 
 ```bash
 sudo vim /etc/netplan/50-cloud-init.yaml
 ```
 
-The file should be similar to the one below:
-
+> The file should be similar to the one below:
 
 ```yaml
 network:

@@ -5,21 +5,21 @@
 > Check the offical docs first for current steps:
 > https://kubernetes.io/docs/tasks/tools/install-kubectl-linux
 
-## 1. Remove old repo (if it exists)
+## Remove old repo (if it exists)
 
 ```bash
 sudo rm -f /etc/apt/sources.list.d/kubernetes.list
 sudo apt update
 ````
 
-## 2. Install dependencies
+## Install dependencies
 
 ```bash
 sudo apt update
 sudo apt install -y apt-transport-https ca-certificates curl gnupg
 ```
 
-## 3. Add Kubernetes apt repo (v1.33 stable)
+## Add Kubernetes apt repo (v1.33 stable)
 
 ```bash
 # Create the keyrings directory and apply permissions
@@ -41,14 +41,14 @@ https://pkgs.k8s.io/core:/stable:/v1.33/deb/ /' \
 sudo chmod 644 /etc/apt/sources.list.d/kubernetes.list
 ```
 
-## 4. Install kubectl
+## Install kubectl
 
 ```bash
 sudo apt-get update
 sudo apt-get install -y kubectl
 ```
 
-## 5. Verify
+## Verify
 
 ```bash
 kubectl version --client

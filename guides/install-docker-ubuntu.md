@@ -1,19 +1,19 @@
 # Install Docker on Ubuntu
 
-## Steps
+## About
 
 >These notes only reflect the last time Docker was installed on my homelab server. 
 
 > Check the offical docs first for current steps:
 >https://docs.docker.com/engine/install/ubuntu/
 
-1. Remove old versions
+## Remove previous installed versions
 
 ```bash
 for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
 ```
 
-2. Set up the app repo + GPG key
+## Set up the app repo + GPG key
 
 ```bash
 sudo apt-get update
@@ -23,7 +23,7 @@ sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyring
 sudo chmod a+r /etc/apt/keyrings/docker.asc
 ```
 
-3. Add apt sources
+## Add apt sources
 
 ```bash
 echo \
@@ -33,7 +33,7 @@ echo \
 sudo apt-get update
 ```
 
-4. Install Docker
+## Install Docker
 
 ```bash
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose docker-compose-plugin 
@@ -56,7 +56,7 @@ newgrp docker
 
 </details><br>
 
-6. Test install
+## Test install
 
 ```bash
 docker run hello-world

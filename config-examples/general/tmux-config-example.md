@@ -1,6 +1,8 @@
-# TMUX Config
+# tmux Config
 
-Simple example of the `.tmux.conf`. This file is typically saved to `$HOME`
+## About
+
+Small example of the `.tmux.conf`. This file is typically saved to `$HOME`
 
 ```bash
 # Re-map the prefix to C-a from C-b  

@@ -1,5 +1,6 @@
 # DNF Cheatsheet
 
+## About
 Small collection of commands and options relating to using `dnf` package manager.
 
 > Check the latest Command Reference docs:  

@@ -1,4 +1,4 @@
-# Quicklook Bash Operators
+# Bash Operators
 
 - `cmd1 ; cmd2` → run `cmd1`, then run `cmd2` (always, sequential).
 - `cmd1 && cmd2` → run `cmd2` **only if** `cmd1` succeeds (exit code 0).
@@ -9,32 +9,22 @@
 - `(cmd1 ; cmd2)` → run in a subshell (isolated environment).
 - `{ cmd1 ; cmd2; }` → run in current shell (grouped commands).
 
----
+## Exit Codes
 
-**In Bash, “success” = exit code `0`, “failure” = anything non-zero.**
-
+In Bash, “success” = exit code `0`, “failure” = anything non-zero.
 
 - `&&` means “if success (0) -> then do next.”
     
 - `||` means “if failure (≠0) -> then do next.”
     
-
----
-
-## **Real-world `&&` / `||` examples**:
+## Examples for `&&` / `||`:
 
 ### Grep
 
-
 ```bash
-grep "ERROR" logfile && echo "Errors found"
-grep "ERROR" logfile || echo "No errors found"
+grep "ERROR" logfile && echo "Errors found"     # prints if grep found a match.
+grep "ERROR" logfile || echo "No errors found"  # prints if grep did not find anything.
 ```
-
-- First one: only prints if grep **found** a match.
-- Second one: only prints if grep **didn’t** find anything.
-
----
 
 ### Curl
 
@@ -45,8 +35,6 @@ curl -s https://example.com && echo "Site is up" || echo "Site is down"
 - If curl succeeds (exit code 0), it echoes *“Site is up.”*
 - If it fails (non-0, e.g. timeout), it echoes *“Site is down.”*
 
----
-
 ### Make
 
 ```bash
@@ -54,8 +42,6 @@ make && sudo make install
 ```
 
 - Only installs if the build completed successfully.
-
----
 
 ### Install fallback
 
