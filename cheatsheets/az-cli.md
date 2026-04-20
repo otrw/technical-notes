@@ -1,5 +1,8 @@
 Common `az` commands for working with `azure-cli`
 
+> Offical docs for azure-cli:  
+> https://learn.microsoft.com/en-us/cli/azure/?view=azure-cli-latest
+
 ```bash
 # Check Azure CLI installation
 az version

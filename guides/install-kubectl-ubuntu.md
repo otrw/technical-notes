@@ -1,7 +1,9 @@
 # Install `kubectl` on Ubuntu
 
-These are the official steps using the **new upstream apt repo (pkgs.k8s.io)**.  
-This keeps `kubectl` up to date with `apt upgrade`.
+>These notes only reflect the last time kubectl was installed on my homelab server. 
+
+> Check the offical docs first for current steps:
+> https://kubernetes.io/docs/tasks/tools/install-kubectl-linux
 
 ## 1. Remove old repo (if it exists)
 
@@ -56,4 +58,3 @@ kubectl version --client
 
 - Updates come via `apt upgrade`.
 - Change `v1.33` in the repo URL if you need a different minor version later.
-- Official docs: [Install and Set Up kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/).

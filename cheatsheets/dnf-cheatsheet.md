@@ -2,6 +2,10 @@
 
 Small collection of commands and options relating to using `dnf` package manager.
 
+> Check the latest Command Reference docs:  
+> https://dnf.readthedocs.io/en/latest/command_ref.html
+
+
 ```bash
 # Search & info
 dnf se <term>                  # search
