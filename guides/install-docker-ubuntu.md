@@ -1,6 +1,11 @@
 # Install Docker on Ubuntu
 
-## Installation steps
+## Steps
+
+>These notes only reflect the last time Docker was installed on my homelab server. 
+
+> Check the offical docs first for current steps:
+>https://docs.docker.com/engine/install/ubuntu/
 
 1. Remove old versions
 
@@ -56,6 +61,3 @@ newgrp docker
 ```bash
 docker run hello-world
 ```
-
-## References
-- [Official Docker Docs](https://docs.docker.com/engine/install/)
