@@ -1,6 +1,8 @@
 # Secrets / environment
 .env
 .env.*
+secrets*
+*.local
 
 # Keys / certificates
 *.pem
@@ -8,6 +10,10 @@
 *.p12
 *.pfx
 id_rsa*
+id_rsa*
+id_ed25519*
+id_ecdsa*
+id_dsa*
 
 # Editor / OS clutter
 .DS_Store
@@ -16,3 +22,8 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+*~
+
+# Shell history
+.zsh_history
+.bash_history
