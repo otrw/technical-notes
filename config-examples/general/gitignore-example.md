@@ -1,3 +1,8 @@
+# `.gitignore` Example
+
+Example of a basic `.gitignore file/template.
+
+```text
 # Secrets / environment
 .env
 .env.*
@@ -27,3 +32,4 @@ Thumbs.db
 # Shell history
 .zsh_history
 .bash_history
+```
