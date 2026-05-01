@@ -1,6 +1,6 @@
-# `.gitignore` Example
+# Basic `.gitignore`
 
-Example of a basic `.gitignore` file/template.
+Basic `.gitignore` template.
 
 ```text
 # Secrets / environment

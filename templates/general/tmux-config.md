@@ -2,9 +2,9 @@
 
 ## About
 
-Small example of the `.tmux.conf`. This file is typically saved to `$HOME`
+Example of the `.tmux.conf`, typically saved to `$HOME`
 
-```bash
+```text
 # Re-map the prefix to C-a from C-b  
 unbind C-b  
 set-option -g prefix C-a  
