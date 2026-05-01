@@ -1,12 +1,18 @@
-# tmux Config
+# tmux config template
 
-## About
+## What is this?
+Basic `~/.tmux.conf` setup
 
-Example of the `.tmux.conf`, typically saved to `$HOME`
+## When do I use this?
+Setting up tmux on a new system
+
+# Usage
 
 ```text
-# Re-map the prefix to C-a from C-b  
 unbind C-b  
 set-option -g prefix C-a  
 bind-key C-a send-prefix
 ```
+## Notes
+- Above changes prefix from `ctrl+b` -> `ctrl+a`
+- Reload using `tmux source-file ~/.tmux.conf` 
