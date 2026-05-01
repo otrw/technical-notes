@@ -6,8 +6,8 @@ These are starting points — copy, modify, and use in projects.
 
 ## Structure
 
-- docker/ → Docker compose and env examples
-- general/ → Common configs (ssh, tmux, vim, gitignore)
+- docker/ -> Docker compose and env examples
+- general/ -> Common configs (ssh, tmux, vim, gitignore)
 
 ## Usage
 
