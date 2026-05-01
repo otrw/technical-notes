@@ -2,7 +2,7 @@
 # vimrc template
 
 ## What is this?
-Basic ~/.vimrc configuration
+Basic `~/.vimrc` configuration
 
 ## When do I use this?
 Setting up Vim on a new system
@@ -26,6 +26,6 @@ set backspace=indent,eol,start
 ```
 
 ## Notes
+
 - Uses 2-space indentation
 - Highlights trailing whitespace
-

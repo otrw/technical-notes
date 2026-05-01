@@ -14,5 +14,6 @@ set-option -g prefix C-a
 bind-key C-a send-prefix
 ```
 ## Notes
+
 - Above changes prefix from `ctrl+b` -> `ctrl+a`
 - Reload using `tmux source-file ~/.tmux.conf` 
