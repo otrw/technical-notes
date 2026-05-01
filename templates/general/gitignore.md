@@ -1,6 +1,12 @@
-# Basic `.gitignore`
+# .gitignore template
 
-Basic `.gitignore` template.
+## What is this?
+Base ignore file for most projects
+
+## When do I use this?
+Starting a new repo
+
+## Template
 
 ```text
 # Secrets / environment
@@ -14,11 +20,7 @@ secrets*
 *.key
 *.p12
 *.pfx
-id_rsa*
-id_rsa*
-id_ed25519*
-id_ecdsa*
-id_dsa*
+id_*
 
 # Editor / OS clutter
 .DS_Store
@@ -33,3 +35,8 @@ Thumbs.db
 .zsh_history
 .bash_history
 ```
+
+## Notes
+
+- Always ignore secrets.
+- Adjust per project
