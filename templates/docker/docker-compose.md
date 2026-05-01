@@ -1,27 +1,33 @@
-# Docker Compose Template
+# Docker compose template
 
-## About
+## What is this?
+Base template for running a container
 
-Empty `docker-compose.yml` file.
+## When do I use this?
+Starting any new Docker service
 
-## Example
+## Template
 
 ```yml
 services:
-  <service-name>:
-    image: <image-name>:<tag> # e.g. rmcrackan/libation:latest
-    container_name: <container-name> # Optional
+  app:
+    image: example:latest
+    container_name: app
     ports:
-      - "<host-port>:<container-port>" # Map host port to container port (optional)
+      - "8080:80"
     environment:
-      - VAR_NAME=value # Environment variables (optional)
+      - VAR_NAME=value
     volumes:
-      # Local bind mount example (read‑only)
       - ./config:/config:ro
-      # Named volume example (persistent data)
-      - <named-volume>:/data
-    restart: unless-stopped # Restart policy
+      - data:/data
+    restart: unless-stopped
 
 volumes:
-  <named-volume>: # Declare named volumes here
+  data:
 ```
+
+## Notes
+
+- Use name volumes for persistent data.
+- Use bind mounts for Configuration.
+- Prefere `.env` over inline secrets.
