@@ -1,20 +1,21 @@
-# SSH Config Example
+# ssh config template
 
-## About
+## What is this?
+Example `~/.ssh/config` for host aliases
 
-Example `~/.ssh/config` for aliasing hosts and setting defaults.
+## When do I use this?
+When connecting to servers regularly
 
-```plaintext
-# Match any host starting with "web-"
+## Template
+
+```text
 Host web-*
-    User ansible                   # Default user for matching hosts
+    User ansible
 
-# Example alias: web-prod
 Host web-prod
-    HostName prod.example.com       # Actual IP or hostname
-    Port 22                         # Optional: override SSH port
+    HostName prod.example.com
+    Port 22
 
-# Example alias: web-staging
 Host web-staging
     HostName staging.example.com
 ```
@@ -22,8 +23,12 @@ Host web-staging
 ## Usage
 
 ```bash
-ssh -G web-prod     # Show effective config (dry run)
-ssh -v web-prod     # Connect with verbose output
+ssh web-prod
+ssh -G web-prod
+ssh -v web-prod
 ```
 
-> Be careful storing SSH config examples in shared repos or change records if they reference real usernames, hostnames, certificates, or key paths.
+## Notes
+
+- Avoid commiting real hostnames or keys.
+- use this to simplify SSH commands.
