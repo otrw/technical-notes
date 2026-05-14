@@ -1,10 +1,11 @@
 # Hetzner: SSH setup
 
-> If you are creating a disposable playground, use the `root` account for testing and finding your way around.  
+> For creating a disposable playground, use the `root` account for testing and finding your way around.  
 
-> Best practice is to create a new user, especially if hosting applications or leave the VM up 24/7.
+> Best practice: create a new user, especially if hosting applications or leaving the VM up 24/7.
 
-1. Create your VM in the Hetzner console and upload your SSH key for `root` (simplest way first time).
+1. Create your VM in the Hetzner console and upload your SSH key for `root`.
+    
     - Make a note of the IP Address
 
 2. Connect as root and immediately create a normal user (e.g. `user1`):
@@ -35,7 +36,7 @@
    chmod 600 /home/user1/.ssh/authorized_keys
    ```
 
-> This gives your new user the same key-based login you just used with root.
+> This gives the new user the same key-based login as used with root previously.
    
 3. Update SSH config (`/etc/ssh/sshd_config`) to disable direct root login:
 
