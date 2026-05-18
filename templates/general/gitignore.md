@@ -1,28 +1,17 @@
-# .gitignore template
-
-## What is this?
-Base ignore file for most projects
-
-## When do I use this?
-Starting a new repo
-
-## Template
-
-```text
 # Secrets / environment
 .env
 .env.*
 secrets*
 *.local
 
-# Keys / certificates
+# Keys / certs
 *.pem
 *.key
 *.p12
 *.pfx
 id_*
 
-# Editor / OS clutter
+# Editor / OS
 .DS_Store
 Thumbs.db
 .vscode/
@@ -34,9 +23,17 @@ Thumbs.db
 # Shell history
 .zsh_history
 .bash_history
-```
 
-## Notes
+# Project-specific generated files
+logs/
+backups/
+tmp/
 
-- Always ignore secrets.
-- Adjust per project
+# Backup archives
+*.tar
+*.tar.gz
+*.tgz
+
+# Python cache
+__pycache__/
+*.pyc
