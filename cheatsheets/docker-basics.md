@@ -78,5 +78,3 @@ docker info
 - The `-f` flag with `docker rm` forces removal of a running container.
 - Use `docker exec` to run commands in a running container.
 - `docker compose` is used for managing multi-container applications.
-	- Note: This should be the default to lean in to. See [[Minecraft-Docker-Compose]] as an example.
-- `docker system prune` removes unused Docker objects to free up space.
